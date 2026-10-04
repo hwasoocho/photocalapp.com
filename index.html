@@ -4,22 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PhotoCal: Photo Calendar</title>
-<meta name="description" content="A calendar for the photos already on your phone. Photos stay on your device.">
+<meta name="description" content="A calendar for the photos already on your phone. Look back by date, keep the best, clear the rest. Photos stay on your device.">
 <meta property="og:title" content="PhotoCal: Photo Calendar">
 <meta property="og:description" content="A calendar for the photos already on your phone.">
 <meta property="og:image" content="https://photocalapp.com/img/01_calendar.jpg">
+<link rel="icon" href="/img/icon-64.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/style.css">
 <style>
   body { max-width: none; padding: 0; }
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
   header { padding: 96px 0 56px; }
+  header .icon { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 1px 3px color-mix(in srgb, CanvasText 18%, transparent); }
   header h1 { font-size: clamp(44px, 7vw, 72px); letter-spacing: -0.03em; line-height: 1; margin: 0; }
   header p { font-size: clamp(19px, 2.4vw, 23px); color: GrayText; max-width: 34em; margin: 20px 0 0; }
   .soon { display: inline-block; margin-top: 28px; font-size: 15px; color: GrayText; border: 1px solid color-mix(in srgb, CanvasText 15%, transparent); border-radius: 999px; padding: 8px 16px; }
+  header .price { font-size: 15px; color: GrayText; margin: 16px 0 0; max-width: none; }
   .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
   .shots img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
   .shots img:nth-child(2) { margin-top: 48px; }
-  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding: 72px 0 24px; }
+  .points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; padding: 72px 0 24px; }
   .points h2 { font-size: 17px; margin: 0 0 6px; }
   .points p { margin: 0; color: GrayText; font-size: 16px; }
   .site-footer { padding: 56px 0 64px; font-size: 14px; display: flex; gap: 20px; }
@@ -36,9 +40,11 @@
 <body>
 <div class="wrap">
   <header>
+    <img class="icon" src="/img/icon-180.png" alt="PhotoCal icon">
     <h1>PhotoCal</h1>
     <p>A calendar for the photos already on your phone. Open a month, see each day's photo, tap a day to see them all.</p>
     <span class="soon">Coming to the App Store and Google Play</span>
+    <p class="price">Free for the last 30 days. A one-time purchase unlocks every day. No subscription.</p>
   </header>
 
   <section class="shots" aria-label="Screenshots">
@@ -55,6 +61,10 @@
     <div>
       <h2>Same day, different year</h2>
       <p>Open any date to see what you photographed on it one, two, or ten years ago.</p>
+    </div>
+    <div>
+      <h2>Keep the best</h2>
+      <p>Go through a day one photo at a time. Heart the keepers, delete the rest. Changes go straight to your Photos app.</p>
     </div>
     <div>
       <h2>Stays on your phone</h2>
