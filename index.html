@@ -1,9 +1,71 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PhotoCal: Photo Calendar</title><meta name="description" content="Photos On This Day & Memories. See your photos on a calendar.">
-<link rel="stylesheet" href="/style.css"></head><body>
-<h1>PhotoCal</h1>
-<p class="sub">Photos On This Day &amp; Memories</p>
-<p>A calendar for the photos already on your phone. Open a month, see each day's photo, tap a day to see them all. Everything stays on your device.</p>
-<footer><a href="/privacy/">Privacy Policy</a> &nbsp; <a href="/support/">Support</a></footer>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhotoCal: Photo Calendar</title>
+<meta name="description" content="A calendar for the photos already on your phone. Photos stay on your device.">
+<meta property="og:title" content="PhotoCal: Photo Calendar">
+<meta property="og:description" content="A calendar for the photos already on your phone.">
+<meta property="og:image" content="https://photocalapp.com/img/01_calendar.jpg">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { max-width: none; padding: 0; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 96px 0 56px; }
+  header h1 { font-size: clamp(44px, 7vw, 72px); letter-spacing: -0.03em; line-height: 1; margin: 0; }
+  header p { font-size: clamp(19px, 2.4vw, 23px); color: GrayText; max-width: 34em; margin: 20px 0 0; }
+  .soon { display: inline-block; margin-top: 28px; font-size: 15px; color: GrayText; border: 1px solid color-mix(in srgb, CanvasText 15%, transparent); border-radius: 999px; padding: 8px 16px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+  .shots img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
+  .shots img:nth-child(2) { margin-top: 48px; }
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding: 72px 0 24px; }
+  .points h2 { font-size: 17px; margin: 0 0 6px; }
+  .points p { margin: 0; color: GrayText; font-size: 16px; }
+  .site-footer { padding: 56px 0 64px; font-size: 14px; display: flex; gap: 20px; }
+  .site-footer a { color: GrayText; }
+  @media (max-width: 720px) {
+    header { padding: 64px 0 40px; }
+    .shots { grid-template-columns: 1fr 1fr; }
+    .shots img:nth-child(3) { display: none; }
+    .shots img:nth-child(2) { margin-top: 32px; }
+    .points { grid-template-columns: 1fr; gap: 24px; padding-top: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>PhotoCal</h1>
+    <p>A calendar for the photos already on your phone. Open a month, see each day's photo, tap a day to see them all.</p>
+    <span class="soon">Coming to the App Store and Google Play</span>
+  </header>
+
+  <section class="shots" aria-label="Screenshots">
+    <img src="/img/01_calendar.jpg" alt="A month calendar where each date shows that day's photo">
+    <img src="/img/04_viewer.jpg" alt="A photo opened full screen" loading="lazy">
+    <img src="/img/05_same_day.jpg" alt="The same date in earlier years" loading="lazy">
+  </section>
+
+  <section class="points">
+    <div>
+      <h2>Every day, at a glance</h2>
+      <p>Each date in the month shows a photo you took that day. Your favorites are listed under the month.</p>
+    </div>
+    <div>
+      <h2>Same day, different year</h2>
+      <p>Open any date to see what you photographed on it one, two, or ten years ago.</p>
+    </div>
+    <div>
+      <h2>Stays on your phone</h2>
+      <p>No account, no upload, no tracking. PhotoCal reads your library on your device and nowhere else.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/support/">Support</a>
+  </footer>
+</div>
+</body>
+</html>
