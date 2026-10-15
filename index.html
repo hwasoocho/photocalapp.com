@@ -3,11 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PhotoCal: Photo Calendar</title>
-<meta name="description" content="A calendar for the photos already on your phone. Look back by date, keep the best, clear the rest, share a day. Photos stay on your device.">
+<title>PhotoCal: Photo Calendar for iPhone and Android</title>
+<meta name="description" content="A calendar for the photos already on your phone. Look back by date, keep the best, clear the rest, share a day. Photos stay on your device. Free on iPhone and Android.">
+<link rel="canonical" href="https://photocalapp.com/">
+<meta name="apple-itunes-app" content="app-id=6818942546">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://photocalapp.com/">
 <meta property="og:title" content="PhotoCal: Photo Calendar">
 <meta property="og:description" content="A calendar for the photos already on your phone.">
 <meta property="og:image" content="https://photocalapp.com/img/01_calendar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "PhotoCal: Photo Calendar",
+  "url": "https://photocalapp.com/",
+  "image": "https://photocalapp.com/img/icon-180.png",
+  "description": "A calendar for the photos already on your phone. Look back by date, keep the best, clear the rest, share a day.",
+  "applicationCategory": "PhotographyApplication",
+  "operatingSystem": "iOS, Android",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "sameAs": [
+    "https://apps.apple.com/app/id6818942546",
+    "https://play.google.com/store/apps/details?id=com.photocalapp.photocal"
+  ]
+}
+</script>
 <link rel="icon" href="/img/icon-64.png">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/style.css">
@@ -18,7 +40,8 @@
   header .icon { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 1px 3px color-mix(in srgb, CanvasText 18%, transparent); }
   header h1 { font-size: clamp(44px, 7vw, 72px); letter-spacing: -0.03em; line-height: 1; margin: 0; }
   header p { font-size: clamp(19px, 2.4vw, 23px); color: GrayText; max-width: 34em; margin: 20px 0 0; }
-  .soon { display: inline-block; margin-top: 28px; font-size: 15px; color: GrayText; border: 1px solid color-mix(in srgb, CanvasText 15%, transparent); border-radius: 999px; padding: 8px 16px; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores img { height: 48px; width: auto; display: block; }
   header .price { font-size: 15px; color: GrayText; margin: 16px 0 0; max-width: none; }
   .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
   .shots img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
@@ -43,14 +66,17 @@
     <img class="icon" src="/img/icon-180.png" alt="PhotoCal icon">
     <h1>PhotoCal</h1>
     <p>A calendar for the photos already on your phone. Open a month, see each day's photo, tap a day to see them all.</p>
-    <span class="soon">Coming to the App Store and Google Play</span>
+    <div class="stores">
+      <a href="https://apps.apple.com/app/id6818942546"><img src="/img/app-store.svg" alt="Download on the App Store"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.photocalapp.photocal&amp;referrer=utm_source%3Dphotocalapp.com"><img src="/img/google-play.png" alt="Get it on Google Play"></a>
+    </div>
     <p class="price">Recent photos (the last 30 days) are always free. Older days: one-time unlock, no subscription.</p>
   </header>
 
   <section class="shots" aria-label="Screenshots">
     <img src="/img/01_calendar.jpg" alt="A month calendar where each date shows that day's photo">
     <img src="/img/02_timeline.jpg" alt="One day's photos grouped by the time they were taken" loading="lazy">
-    <img src="/img/05_same_day.jpg" alt="The same date in earlier years" loading="lazy">
+    <img src="/img/05_same_day.jpg" alt="A day's photos with that day's calendar events" loading="lazy">
   </section>
 
   <section class="points">
