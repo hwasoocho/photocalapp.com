@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhotoCal: 写真カレンダー（iPhoneとAndroid）</title>
+<meta name="description" content="スマートフォンにある写真をカレンダーに。日付で見返して、いい写真だけを残し、1日をシェア。写真は端末の中だけ。iPhoneとAndroidで無料。">
+<link rel="canonical" href="https://photocalapp.com/ja/">
+<link rel="alternate" hreflang="en" href="https://photocalapp.com/">
+<link rel="alternate" hreflang="ja" href="https://photocalapp.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://photocalapp.com/">
+<meta name="apple-itunes-app" content="app-id=6818942546">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://photocalapp.com/ja/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="PhotoCal: 写真カレンダー">
+<meta property="og:description" content="スマートフォンにある写真をカレンダーに。">
+<meta property="og:image" content="https://photocalapp.com/img/ja/01_calendar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "PhotoCal: 写真カレンダー",
+  "url": "https://photocalapp.com/ja/",
+  "inLanguage": "ja",
+  "image": "https://photocalapp.com/img/icon-180.png",
+  "description": "スマートフォンにある写真をカレンダーに。日付で見返して、いい写真だけを残し、1日をシェア。",
+  "applicationCategory": "PhotographyApplication",
+  "operatingSystem": "iOS, Android",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "sameAs": [
+    "https://apps.apple.com/jp/app/id6818942546",
+    "https://play.google.com/store/apps/details?id=com.photocalapp.photocal"
+  ]
+}
+</script>
+<link rel="icon" href="/img/icon-64.png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body { max-width: none; padding: 0; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 96px 0 56px; }
+  header .icon { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 1px 3px color-mix(in srgb, CanvasText 18%, transparent); }
+  header h1 { font-size: clamp(44px, 7vw, 72px); letter-spacing: -0.03em; line-height: 1; margin: 0; }
+  header p { font-size: clamp(19px, 2.4vw, 23px); color: GrayText; max-width: 34em; margin: 20px 0 0; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stores img { height: 48px; width: auto; display: block; }
+  header .price { font-size: 15px; color: GrayText; margin: 16px 0 0; max-width: none; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+  .shots img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
+  .shots img:nth-child(2) { margin-top: 48px; }
+  .points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; padding: 72px 0 24px; }
+  .points h2 { font-size: 17px; margin: 0 0 6px; }
+  .points p { margin: 0; color: GrayText; font-size: 16px; }
+  .site-footer { padding: 56px 0 64px; font-size: 14px; display: flex; gap: 20px; }
+  .site-footer a { color: GrayText; }
+  @media (max-width: 720px) {
+    header { padding: 64px 0 40px; }
+    .shots { grid-template-columns: 1fr 1fr; }
+    .shots img:nth-child(3) { display: none; }
+    .shots img:nth-child(2) { margin-top: 32px; }
+    .points { grid-template-columns: 1fr; gap: 24px; padding-top: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img class="icon" src="/img/icon-180.png" alt="PhotoCalのアイコン">
+    <h1>PhotoCal</h1>
+    <p>PhotoCalは、スマートフォンにある写真をカレンダーにします。月を開くと、毎日その日に撮った写真が表示されます。日付をタップすると、その日の写真をすべて見られます。</p>
+    <div class="stores">
+      <a href="https://apps.apple.com/jp/app/id6818942546"><img src="/img/app-store.svg" alt="App Storeからダウンロード"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.photocalapp.photocal&amp;hl=ja&amp;referrer=utm_source%3Dphotocalapp.com%26utm_content%3Dja"><img src="/img/google-play.png" alt="Google Playで手に入れよう"></a>
+    </div>
+    <p class="price">最近の写真（直近30日間）はいつでも無料。それより前の日：買い切りで表示、サブスクリプションなし。</p>
+  </header>
+
+  <section class="shots" aria-label="スクリーンショット">
+    <img src="/img/ja/01_calendar.jpg" alt="毎日その日の写真が表示される月のカレンダー">
+    <img src="/img/ja/02_timeline.jpg" alt="撮った時間ごとに並んだ1日の写真" loading="lazy">
+    <img src="/img/ja/05_same_day.jpg" alt="1日の写真とその日のカレンダーの予定" loading="lazy">
+  </section>
+
+  <section class="points">
+    <div>
+      <h2>毎日をひと目で</h2>
+      <p>月を開くと、毎日その日に撮った写真が表示されます。その月のお気に入りを、カレンダーのすぐ下に表示します。</p>
+    </div>
+    <div>
+      <h2>同じ日、別の年</h2>
+      <p>1年前、2年前、10年前の同じ日に何を撮ったかを見られます。</p>
+    </div>
+    <div>
+      <h2>いい写真だけを残す</h2>
+      <p>写真を見ながら、そのままハートや削除ができます。複数枚を選んでまとめて操作することも。変更は写真アプリにそのまま反映されます。</p>
+    </div>
+    <div>
+      <h2>1日をシェア</h2>
+      <p>1日をタイムライン画像1枚でシェアするか、写真をそのままシェアできます。ストーリーにそのまま使えるサイズです。</p>
+    </div>
+    <div>
+      <h2>プライバシーを大切に</h2>
+      <p>アカウント不要。アップロードなし。トラッキングなし。PhotoCalは写真を端末の中でだけ読み込みます。</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <a href="/privacy/">プライバシーポリシー</a>
+    <a href="/support/">サポート</a>
+    <a href="/" hreflang="en" lang="en">English</a>
+  </footer>
+</div>
+</body>
+</html>
