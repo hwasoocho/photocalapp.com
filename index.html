@@ -114,7 +114,7 @@
 <script>
 // Carries the channel a visitor came from (photocalapp.com/?utm_source=threads)
 // into the store buttons, so installs can be counted per channel: Play's
-// install referrer, and the App Store campaign (ct; counted once pt is set).
+// install referrer, and the App Store campaign link (pt is our provider id).
 (function () {
   var source = new URLSearchParams(location.search).get('utm_source');
   if (!source || !/^[a-z0-9_.-]{1,40}$/i.test(source)) return;
@@ -123,7 +123,9 @@
   });
   document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
     var url = new URL(a.href);
+    url.searchParams.set('pt', '118002225');
     url.searchParams.set('ct', source);
+    url.searchParams.set('mt', '8');
     a.href = url.toString();
   });
 })();
