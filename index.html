@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PhotoCal: Photos On This Day, by Date, for iPhone and Android</title>
-<meta name="description" content="What did you do on this day last year? Open any date and the day comes back: every photo, hour by hour, with where each moment happened. Photos stay on your device. Free on iPhone and Android.">
+<title>PhotoCal: Your Photos as a Calendar, for iPhone and Android</title>
+<meta name="description" content="Your photos, as a calendar. Remember what you did on any day, just from your photos. No diary to keep. Photos stay on your device. Free on iPhone and Android.">
 <link rel="canonical" href="https://photocalapp.com/">
 <link rel="alternate" hreflang="en" href="https://photocalapp.com/">
 <link rel="alternate" hreflang="ja" href="https://photocalapp.com/ja/">
@@ -13,8 +13,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://photocalapp.com/">
 <meta property="og:title" content="PhotoCal: Photo Calendar">
-<meta property="og:description" content="What did you do on this day last year? Open any date and the day comes back, hour by hour, with every place.">
-<meta property="og:image" content="https://photocalapp.com/img/same_day.jpg">
+<meta property="og:description" content="Your photos, as a calendar. Remember what you did on any day, just from your photos. No diary to keep. Photos stay on your device. Free on iPhone and Android.">
+<meta property="og:image" content="https://photocalapp.com/img/s/calendar.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -23,7 +23,7 @@
   "name": "PhotoCal: Photo Calendar",
   "url": "https://photocalapp.com/",
   "image": "https://photocalapp.com/img/icon-180.png",
-  "description": "What did you do on this day last year? Open any date and the day comes back: every photo, hour by hour, with where each moment happened.",
+  "description": "Your photos, as a calendar. Remember what you did on any day, just from your photos. No diary to keep. Photos stay on your device. Free on iPhone and Android.",
   "applicationCategory": "PhotographyApplication",
   "operatingSystem": "iOS, Android",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -41,13 +41,17 @@
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
   .brand { display: flex; align-items: center; gap: 10px; padding: 28px 0 0; font-weight: 600; font-size: 17px; }
   .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 1px 2px color-mix(in srgb, CanvasText 18%, transparent); }
-  header { padding: 72px 0 88px; display: grid; grid-template-columns: 1fr 240px; gap: 72px; align-items: center; }
+  header { padding: 72px 0 88px; display: grid; grid-template-columns: 1fr 300px; gap: 72px; align-items: center; }
   header h1 { font-size: clamp(40px, 5.6vw, 60px); letter-spacing: -0.035em; line-height: 1.05; margin: 0; }
   header p { font-size: clamp(18px, 2vw, 20px); color: GrayText; max-width: 30em; margin: 20px 0 0; line-height: 1.5; }
   .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .stores img { height: 46px; width: auto; display: block; }
   header .price { font-size: 14px; margin-top: 16px; }
   header video { width: 100%; aspect-ratio: 9 / 16; border-radius: 32px; object-fit: cover; background: color-mix(in srgb, CanvasText 5%, transparent); border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); box-shadow: 0 24px 48px -24px color-mix(in srgb, CanvasText 25%, transparent); }
+  header .shot { width: 100%; height: auto; border-radius: 32px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); box-shadow: 0 24px 48px -24px color-mix(in srgb, CanvasText 25%, transparent); display: block; }
+  .screens { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; padding: 0 0 72px; margin: 0; list-style: none; }
+  .screens img { width: 100%; height: auto; border-radius: 18px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); display: block; }
+  .screens span { display: block; font-size: 14px; color: GrayText; margin-top: 10px; text-align: center; }
   .points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 56px; padding: 56px 0 0; border-top: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
   .points h2 { font-size: 17px; margin: 0 0 6px; letter-spacing: -0.01em; }
   .points p { margin: 0; color: GrayText; font-size: 16px; line-height: 1.5; }
@@ -57,6 +61,9 @@
     .brand { padding-top: 20px; }
     header { padding: 40px 0 56px; grid-template-columns: 1fr; gap: 40px; }
     header video { max-width: 220px; margin: 0 auto; display: block; }
+    header .shot { max-width: 220px; margin: 0 auto; }
+    .screens { grid-template-columns: repeat(5, 40%); overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0; padding: 0 0 48px; }
+    .screens li { scroll-snap-align: start; }
     .points { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; }
   }
 </style>
@@ -66,16 +73,23 @@
   <div class="brand"><img src="/img/icon-180.png" alt="PhotoCal icon">PhotoCal</div>
   <header>
     <div>
-      <h1>What did you do on this day last year?</h1>
-      <p>Open any date and the day comes back: every photo, hour by hour, with where each moment happened.</p>
+      <h1>Your photos, as a calendar.</h1>
+      <p>Remember what you did on any day, just from your photos.<br>No diary to keep.</p>
       <div class="stores">
       <a href="https://apps.apple.com/app/id6818942546"><img src="/img/app-store.svg" alt="Download on the App Store"></a>
       <a href="https://play.google.com/store/apps/details?id=com.photocalapp.photocal&amp;referrer=utm_source%3Dphotocalapp.com"><img src="/img/google-play.png" alt="Get it on Google Play"></a>
     </div>
       <p class="price">Recent photos (the last 30 days) are always free. Older days: one-time unlock, no subscription.</p>
     </div>
-    <video src="/img/lastyear.mp4" poster="/img/lastyear.jpg" autoplay muted loop playsinline aria-label="Opening the same day one year ago: the day's photos hour by hour, with the place of each moment"></video>
+    <img class="shot" src="/img/s/calendar.jpg" alt="A month calendar where each date shows a photo you took that day">
   </header>
+  <ul class="screens" aria-label="Screens">
+    <li><img src="/img/s/day.jpg" alt="A day as a timeline: each moment's time and place" loading="lazy"><span>The whole day</span></li>
+    <li><img src="/img/s/photo.jpg" alt="A photo opened full screen" loading="lazy"><span>Every photo</span></li>
+    <li><img src="/img/s/same_day.jpg" alt="The same date one, two and three years ago" loading="lazy"><span>Same day, other years</span></li>
+    <li><img src="/img/s/select.jpg" alt="Several photos selected to delete or favorite" loading="lazy"><span>Clean up</span></li>
+    <li><img src="/img/s/share.jpg" alt="Sharing a day as one picture or as photos" loading="lazy"><span>Share a day</span></li>
+  </ul>
   <section class="points" aria-label="Features">
     <div>
       <h2>Every day, at a glance</h2>
@@ -86,12 +100,12 @@
       <p>Tap a day to see all of it, as a timeline of moments or a gallery.</p>
     </div>
     <div>
-      <h2>Same day, different year</h2>
-      <p>Open any date to see what you photographed on it one, two, or ten years ago.</p>
-    </div>
-    <div>
       <h2>Every place you went</h2>
       <p>Next to each moment's time, the place it was taken. Tap it to open the spot in your map app.</p>
+    </div>
+    <div>
+      <h2>Same day, different year</h2>
+      <p>Open any date to see what you photographed on it one, two, or ten years ago.</p>
     </div>
     <div>
       <h2>Keep the best</h2>
