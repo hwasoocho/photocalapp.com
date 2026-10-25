@@ -41,7 +41,7 @@
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
   .brand { display: flex; align-items: center; gap: 10px; padding: 28px 0 0; font-weight: 600; font-size: 17px; }
   .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 1px 2px color-mix(in srgb, CanvasText 18%, transparent); }
-  header { padding: 72px 0 88px; display: grid; grid-template-columns: 1fr 300px; gap: 72px; align-items: center; }
+  header { padding: 72px 0 88px; display: grid; grid-template-columns: 1fr 240px; gap: 72px; align-items: center; }
   header h1 { font-size: clamp(40px, 5.6vw, 60px); letter-spacing: -0.035em; line-height: 1.05; margin: 0; }
   header p { font-size: clamp(18px, 2vw, 20px); color: GrayText; max-width: 30em; margin: 20px 0 0; line-height: 1.5; }
   .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
@@ -49,7 +49,7 @@
   header .price { font-size: 14px; margin-top: 16px; }
   header video { width: 100%; aspect-ratio: 9 / 16; border-radius: 32px; object-fit: cover; background: color-mix(in srgb, CanvasText 5%, transparent); border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); box-shadow: 0 24px 48px -24px color-mix(in srgb, CanvasText 25%, transparent); }
   header .shot { width: 100%; height: auto; border-radius: 32px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); box-shadow: 0 24px 48px -24px color-mix(in srgb, CanvasText 25%, transparent); display: block; }
-  .screens { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; padding: 0 0 72px; margin: 0; list-style: none; }
+  .screens { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; padding: 0 0 72px; margin: 0; list-style: none; }
   .screens img { width: 100%; height: auto; border-radius: 18px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); display: block; }
   .screens span { display: block; font-size: 14px; color: GrayText; margin-top: 10px; text-align: center; }
   .points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 56px; padding: 56px 0 0; border-top: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
@@ -62,7 +62,7 @@
     header { padding: 40px 0 56px; grid-template-columns: 1fr; gap: 40px; }
     header video { max-width: 220px; margin: 0 auto; display: block; }
     header .shot { max-width: 220px; margin: 0 auto; }
-    .screens { grid-template-columns: repeat(5, 40%); overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0; padding: 0 0 48px; }
+    .screens { grid-template-columns: repeat(6, 40%); overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0; padding: 0 0 48px; }
     .screens li { scroll-snap-align: start; }
     .points { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; }
   }
@@ -81,9 +81,10 @@
     </div>
       <p class="price">Recent photos (the last 30 days) are always free. Older days: one-time unlock, no subscription.</p>
     </div>
-    <img class="shot" src="/img/s/calendar.jpg" alt="A month calendar where each date shows a photo you took that day">
+    <video src="/img/lastyear.mp4" poster="/img/lastyear.jpg" autoplay muted loop playsinline aria-label="Opening the same day one year ago: the day's photos hour by hour, with the place of each moment"></video>
   </header>
   <ul class="screens" aria-label="Screens">
+    <li><img src="/img/s/month.jpg" alt="A month calendar where each date shows a photo you took that day" loading="lazy"><span>The month</span></li>
     <li><img src="/img/s/day.jpg" alt="A day as a timeline: each moment's time and place" loading="lazy"><span>The whole day</span></li>
     <li><img src="/img/s/photo.jpg" alt="A photo opened full screen" loading="lazy"><span>Every photo</span></li>
     <li><img src="/img/s/same_day.jpg" alt="The same date one, two and three years ago" loading="lazy"><span>Same day, other years</span></li>
