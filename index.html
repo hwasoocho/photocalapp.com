@@ -47,21 +47,20 @@
   .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
   .stores img { height: 48px; width: auto; display: block; }
   header .price { font-size: 15px; color: GrayText; margin: 16px 0 0; max-width: none; }
-  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-  .shots img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
-  .shots img:nth-child(2) { margin-top: 48px; }
-  .points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; padding: 72px 0 24px; }
-  .points h2 { font-size: 17px; margin: 0 0 6px; }
-  .points p { margin: 0; color: GrayText; font-size: 16px; }
+  .story { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 8px; }
+  .story figure { margin: 0; }
+  .story img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); display: block; }
+  .story h2 { font-size: 19px; margin: 20px 0 6px; letter-spacing: -0.01em; }
+  .story p { margin: 0; color: GrayText; font-size: 16px; }
+  .private { padding: 64px 0 0; color: GrayText; font-size: 16px; margin: 0; }
   .site-footer { padding: 56px 0 64px; font-size: 14px; display: flex; gap: 20px; }
   .site-footer a { color: GrayText; }
   @media (max-width: 720px) {
     header { padding: 56px 0 40px; grid-template-columns: 1fr; gap: 32px; }
     header video { max-width: 300px; }
-    .shots { grid-template-columns: 1fr 1fr; }
-    .shots img:nth-child(3) { display: none; }
-    .shots img:nth-child(2) { margin-top: 32px; }
-    .points { grid-template-columns: 1fr; gap: 24px; padding-top: 48px; }
+    .story { grid-template-columns: repeat(3, 78%); overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin: 0 -24px; padding: 8px 24px 4px; }
+    .story figure { scroll-snap-align: center; }
+    .private { padding-top: 40px; }
   }
 </style>
 </head>
@@ -71,7 +70,7 @@
     <div>
     <img class="icon" src="/img/icon-180.png" alt="PhotoCal icon">
     <h1>PhotoCal</h1>
-    <p>What did you do on this day last year? Open any date and the day comes back: every photo, hour by hour, with where each moment happened.</p>
+    <p>Your photos, as a calendar. Open a day to see what you did, hour by hour, and the same day last year.</p>
     <div class="stores">
       <a href="https://apps.apple.com/app/id6818942546"><img src="/img/app-store.svg" alt="Download on the App Store"></a>
       <a href="https://play.google.com/store/apps/details?id=com.photocalapp.photocal&amp;referrer=utm_source%3Dphotocalapp.com"><img src="/img/google-play.png" alt="Get it on Google Play"></a>
@@ -81,42 +80,24 @@
     <video src="/img/lastyear.mp4" poster="/img/lastyear.jpg" autoplay muted loop playsinline aria-label="Opening the same day one year ago: the day's photos hour by hour, with the place of each moment"></video>
   </header>
 
-  <section class="shots" aria-label="Screenshots">
-    <img src="/img/same_day.jpg" alt="A day's photos, then the same day one, two and three years ago" loading="lazy">
-    <img src="/img/timeline_places.jpg" alt="A day from one year ago as a timeline: each moment's time and the place it was taken" loading="lazy">
-    <img src="/img/calendar.jpg" alt="A month calendar where each date shows that day's photo" loading="lazy">
+  <section class="story" aria-label="How it works">
+    <figure>
+      <img src="/img/calendar.jpg" alt="A month calendar where each date shows that day's photo" loading="lazy">
+      <h2>Your photos, as a calendar</h2>
+      <p>Every date shows a photo you took that day.</p>
+    </figure>
+    <figure>
+      <img src="/img/timeline_places.jpg" alt="A day as a timeline: each moment's time and the place it was taken" loading="lazy">
+      <h2>What did you do that day?</h2>
+      <p>The whole day, hour by hour, with where each moment happened.</p>
+    </figure>
+    <figure>
+      <img src="/img/same_day.jpg" alt="A day's photos, then the same day one, two and three years ago" loading="lazy">
+      <h2>And on this day last year?</h2>
+      <p>Open the same day one, two, or ten years ago.</p>
+    </figure>
   </section>
-
-  <section class="points">
-    <div>
-      <h2>Same day, different year</h2>
-      <p>Open any date to see what you photographed on it one, two, or ten years ago.</p>
-    </div>
-    <div>
-      <h2>The whole day, hour by hour</h2>
-      <p>Tap a day to see all of it, as a timeline of moments or a gallery.</p>
-    </div>
-    <div>
-      <h2>Every place you went</h2>
-      <p>Next to each moment's time, the place it was taken. Tap it to open the spot in your map app.</p>
-    </div>
-    <div>
-      <h2>Every day, at a glance</h2>
-      <p>Each date in the month shows a photo you took that day. Your favorites are listed under the month.</p>
-    </div>
-    <div>
-      <h2>Keep the best</h2>
-      <p>Heart the keepers and delete the rest, right from a photo or a few at a time with Select. Changes go straight to your Photos app.</p>
-    </div>
-    <div>
-      <h2>Share a day</h2>
-      <p>Send a day as one timeline picture, sized for stories, or send the photos themselves through your phone's own share sheet.</p>
-    </div>
-    <div>
-      <h2>Stays on your phone</h2>
-      <p>No account, no upload, no tracking. PhotoCal reads your library on your device and nowhere else.</p>
-    </div>
-  </section>
+  <p class="private">No account, no upload, no tracking. Your photos stay on your phone.</p>
 
   <footer class="site-footer">
     <a href="/privacy/">Privacy Policy</a>

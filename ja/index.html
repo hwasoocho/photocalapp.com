@@ -49,21 +49,20 @@
   .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
   .stores img { height: 48px; width: auto; display: block; }
   header .price { font-size: 15px; color: GrayText; margin: 16px 0 0; max-width: none; }
-  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-  .shots img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
-  .shots img:nth-child(2) { margin-top: 48px; }
-  .points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; padding: 72px 0 24px; }
-  .points h2 { font-size: 17px; margin: 0 0 6px; }
-  .points p { margin: 0; color: GrayText; font-size: 16px; }
+  .story { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 8px; }
+  .story figure { margin: 0; }
+  .story img { width: 100%; height: auto; border-radius: 28px; border: 1px solid color-mix(in srgb, CanvasText 10%, transparent); display: block; }
+  .story h2 { font-size: 19px; margin: 20px 0 6px; letter-spacing: -0.01em; }
+  .story p { margin: 0; color: GrayText; font-size: 16px; }
+  .private { padding: 64px 0 0; color: GrayText; font-size: 16px; margin: 0; }
   .site-footer { padding: 56px 0 64px; font-size: 14px; display: flex; gap: 20px; }
   .site-footer a { color: GrayText; }
   @media (max-width: 720px) {
     header { padding: 56px 0 40px; grid-template-columns: 1fr; gap: 32px; }
     header video { max-width: 300px; }
-    .shots { grid-template-columns: 1fr 1fr; }
-    .shots img:nth-child(3) { display: none; }
-    .shots img:nth-child(2) { margin-top: 32px; }
-    .points { grid-template-columns: 1fr; gap: 24px; padding-top: 48px; }
+    .story { grid-template-columns: repeat(3, 78%); overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin: 0 -24px; padding: 8px 24px 4px; }
+    .story figure { scroll-snap-align: center; }
+    .private { padding-top: 40px; }
   }
 </style>
 </head>
@@ -73,7 +72,7 @@
     <div>
     <img class="icon" src="/img/icon-180.png" alt="PhotoCalのアイコン">
     <h1>PhotoCal</h1>
-    <p>去年の今日、なにしてた？日付を開くと、その日が戻ってきます。写真を時間ごとに、撮った場所と一緒に。</p>
+    <p>写真を、カレンダーに。日付を開くと、その日なにをしていたかが時間ごとに。去年の同じ日も。</p>
     <div class="stores">
       <a href="https://apps.apple.com/jp/app/id6818942546"><img src="/img/app-store.svg" alt="App Storeからダウンロード"></a>
       <a href="https://play.google.com/store/apps/details?id=com.photocalapp.photocal&amp;hl=ja&amp;referrer=utm_source%3Dphotocalapp.com%26utm_content%3Dja"><img src="/img/google-play.png" alt="Google Playで手に入れよう"></a>
@@ -83,42 +82,24 @@
     <video src="/img/lastyear-ja.mp4" poster="/img/lastyear-ja.jpg" autoplay muted loop playsinline aria-label="1年前の同じ日を開くと、その日の写真が時間ごとに、撮った場所と一緒に並びます"></video>
   </header>
 
-  <section class="shots" aria-label="スクリーンショット">
-    <img src="/img/ja/same_day.jpg" alt="1日の写真と、1年前、2年前、3年前の同じ日" loading="lazy">
-    <img src="/img/ja/timeline_places.jpg" alt="1年前の1日のタイムライン：時間ごとの写真と撮った場所" loading="lazy">
-    <img src="/img/ja/calendar.jpg" alt="毎日その日の写真が表示される月のカレンダー" loading="lazy">
+  <section class="story" aria-label="使い方">
+    <figure>
+      <img src="/img/ja/calendar.jpg" alt="毎日その日の写真が表示される月のカレンダー" loading="lazy">
+      <h2>写真を、カレンダーに</h2>
+      <p>毎日、その日に撮った写真が表示されます。</p>
+    </figure>
+    <figure>
+      <img src="/img/ja/timeline_places.jpg" alt="1日のタイムライン：時間ごとの写真と撮った場所" loading="lazy">
+      <h2>その日、なにしてた？</h2>
+      <p>その日を時間ごとに、撮った場所と一緒に。</p>
+    </figure>
+    <figure>
+      <img src="/img/ja/same_day.jpg" alt="1日の写真と、1年前、2年前、3年前の同じ日" loading="lazy">
+      <h2>去年の今日は？</h2>
+      <p>1年前、2年前、10年前の同じ日を開けます。</p>
+    </figure>
   </section>
-
-  <section class="points">
-    <div>
-      <h2>同じ日、別の年</h2>
-      <p>1年前、2年前、10年前の同じ日に何を撮ったかを見られます。</p>
-    </div>
-    <div>
-      <h2>その日を、時間ごとに</h2>
-      <p>日付をタップすると、その日の写真をすべて見られます。時間順のタイムラインでも、ギャラリーでも。</p>
-    </div>
-    <div>
-      <h2>行った場所も、ぜんぶ</h2>
-      <p>タイムラインの時間の横に、撮った場所が表示されます。タップすると、地図アプリでその場所を開けます。</p>
-    </div>
-    <div>
-      <h2>毎日をひと目で</h2>
-      <p>月を開くと、毎日その日に撮った写真が表示されます。その月のお気に入りを、カレンダーのすぐ下に表示します。</p>
-    </div>
-    <div>
-      <h2>いい写真だけを残す</h2>
-      <p>写真を見ながら、そのままハートや削除ができます。複数枚を選んでまとめて操作することも。変更は写真アプリにそのまま反映されます。</p>
-    </div>
-    <div>
-      <h2>1日をシェア</h2>
-      <p>1日をタイムライン画像1枚でシェアするか、写真をそのままシェアできます。ストーリーにそのまま使えるサイズです。</p>
-    </div>
-    <div>
-      <h2>プライバシーを大切に</h2>
-      <p>アカウント不要。アップロードなし。トラッキングなし。PhotoCalは写真を端末の中でだけ読み込みます。</p>
-    </div>
-  </section>
+  <p class="private">アカウント不要。アップロードなし。トラッキングなし。写真は端末の中だけに。</p>
 
   <footer class="site-footer">
     <a href="/privacy/">プライバシーポリシー</a>
